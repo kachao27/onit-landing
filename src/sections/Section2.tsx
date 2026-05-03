@@ -15,9 +15,9 @@ function ChatBubble({
   dark?: boolean;
 }) {
   return (
-    <div className="relative w-[round(50%,1px)] my-6">
-      <div className="inline-flex max-w-full relative rounded-2xl py-2 px-4 gap-2" style={{ background: bg }}>
-        <div className="max-w-full text-[#191919] font-['Inter_Tight',system-ui,sans-serif] font-medium text-base/5">
+    <div className="relative w-[60%] my-6">
+      <div className="inline-flex max-w-full relative rounded-2xl py-2.5 px-4 gap-2" style={{ background: bg }}>
+        <div className="max-w-full text-[#191919] font-['Inter_Tight',system-ui,sans-serif] font-medium text-base/[22px] whitespace-pre-line">
           {children}
         </div>
         <div className="h-[18px] -left-0.5 absolute -top-0.5 w-[18px] rounded-full" style={{ background: bg }} />
@@ -84,7 +84,7 @@ const platforms: { name: string; slug: string }[] = [
 
 export default function Section2() {
   return (
-    <section className="[font-synthesis:none] w-full h-[6200px] overflow-hidden relative antialiased text-xs/4 bg-[#F0F0F0]">
+    <section className="[font-synthesis:none] w-full h-[7100px] overflow-hidden relative antialiased text-xs/4 bg-[#F0F0F0]">
       {/* THE QUESTION header */}
       <div
         className="text-center tracking-[-0.01em] mix-blend-multiply top-[40px] left-[50%] absolute text-[#19191966] font-['Inter_Tight',system-ui,sans-serif] font-semibold text-2xl/[30px]"
@@ -134,10 +134,10 @@ export default function Section2() {
         </div>
 
         <ChatBubble bg="#E1DBE3" name="Yashwik Ahuja" role="Founder, onit">
-          @opsagent help me understand the inventory health across my top 3 platforms
+          @Gobhi whats up
         </ChatBubble>
-        <ChatBubble bg="#DBDBDB" name="Agent Org" role="Ops Agent, onit" dark>
-          on it.
+        <ChatBubble bg="#DBDBDB" name="Gobhi" role="Ops Agent, onit" dark>
+          yo. Berry Halter M still tight at 4.2d cover after that last move, but holding. Asymmetric Corset Set M dropped to 3.6d — that's our real pinch right now. anything you want me on?
         </ChatBubble>
 
         <ScreenshotCard src="https://app.paper.design/file-assets/01KPAK0NQ7N61HMB5WPEXK7FP2/01KPCRHXM0W8WCA3JKCKSC1STE.png" />
@@ -147,12 +147,22 @@ export default function Section2() {
             Your Company's Observatory.
           </div>
           <div className="text-[#5C5C5C] font-['Inter_Tight',system-ui,sans-serif] font-medium text-base/5">
-            Coordinates work, context, and execution across your entire business.
+            Coordinates work, context, and execution across your entire business — every SKU, every channel, every day.
           </div>
         </div>
 
-        <ChatBubble bg="#DBDBDB" name="Agent Org" role="Coding Agent, onit" dark>
-          Done. gone for approval to @maulikkhanna16!
+        <ChatBubble bg="#E1DBE3" name="Yashwik Ahuja" role="Founder, onit">
+          suggest actions for both @Gobhi
+        </ChatBubble>
+        <ChatBubble bg="#DBDBDB" name="Gobhi" role="Ops Agent, onit" dark>
+          <strong>Asymmetric Corset Set M:</strong> 3.6d cover, DRR 2.8/day{'\n'}
+          Pull 3 units from Website (sits at 4) to Myntra (at 2). Website stays buffered, Myntra avoids suppression. Won't move the needle much on days cover but keeps the channel live.{'\n\n'}
+          <strong>Berry Halter Dress M:</strong> 4.1d cover, DRR 12.0/day{'\n'}
+          This one's the real problem — it's moving fast and thin everywhere. We already pulled 5 to Myntra. Three options:{'\n'}
+          1. Pull 5 more from Website (21 units) to Amazon (8) — gets Amazon to 13, Website still has cushion.{'\n'}
+          2. Suppress the M on Myntra/Nykaa short-term, lean into Website only until restock lands.{'\n'}
+          3. Check with @procurement on when the next PO hits. If &lt;5 days, we can hold. If &gt;7, we suppress or rebalance harder.{'\n\n'}
+          Which way do you want to go?
         </ChatBubble>
 
         <ScreenshotCard src="https://app.paper.design/file-assets/01KPAK0NQ7N61HMB5WPEXK7FP2/01KPCSEXYKW8NGEWV2ZX04BC39.png" />
@@ -162,15 +172,23 @@ export default function Section2() {
             Snap Actions.
           </div>
           <div className="text-[#5C5C5C] font-['Inter_Tight',system-ui,sans-serif] font-medium text-base/5">
-            Saving you time is our priority. And chat actions is the way we achieve that. Chat on Slack or WhatsApp, you can ask them to code, plan or manage.
+            Chat on Slack or WhatsApp. Ask the agent to plan, decide, or execute — they pick up from where you operate.
           </div>
         </div>
 
         <ChatBubble bg="#E1DBE3" name="Yashwik Ahuja" role="Founder, onit">
-          Help me plan Blinkit dispatch plan for tomorrow
+          lets move from website to amazon @Gobhi — berry halter m
         </ChatBubble>
-        <ChatBubble bg="#DBDBDB" name="Agent Org" role="Ops Agent, onit" dark>
-          Done. Blinkit dispatch plan — 80 units BLKPRT
+        <ChatBubble bg="#DBDBDB" name="Gobhi" role="Ops Agent, onit" dark>
+          Pull 5 units of Berry Halter Dress M from Website (has 21) to Amazon (at 8). That brings Website down to 16 (still the buffer) and Amazon up to 13, which gets it safer for the DRR.{'\n\n'}
+          Confirm and I'll log it?
+        </ChatBubble>
+        <ChatBubble bg="#E1DBE3" name="Yashwik Ahuja" role="Founder, onit">
+          confirmed @Gobhi
+        </ChatBubble>
+        <ChatBubble bg="#DBDBDB" name="Gobhi" role="Ops Agent, onit" dark>
+          Logged. Berry Halter M: Web 21 → 16, Amazon 8 → 13.{'\n\n'}
+          Berry Halter is still tight overall (4.1d cover, burning 12/day). Watch the M size — if it dips below 10 units total across channels, I'll flag it.
         </ChatBubble>
 
         <ScreenshotCard src="https://app.paper.design/file-assets/01KPAK0NQ7N61HMB5WPEXK7FP2/01KPCT1BK74NXM5SK4D5RSKX0D.png" />
@@ -180,13 +198,13 @@ export default function Section2() {
             3-Day TAT reduced to 3 seconds. Magic.
           </div>
           <div className="text-[#5C5C5C] font-['Inter_Tight',system-ui,sans-serif] font-medium text-base/5">
-            While other brands can assign their tasks to their interns and wait for eternity. Onit gives you the luxury of autonomous agency.
+            While other brands wait on interns or back-and-forth threads, Onit gives you the luxury of autonomous agency.
           </div>
         </div>
       </div>
 
       {/* "Work picked up from anywhere..." headline */}
-      <div className="left-[50%] top-[3644px] w-[689px] absolute" style={{ translate: '-50%' }}>
+      <div className="left-[50%] top-[4544px] w-[689px] absolute" style={{ translate: '-50%' }}>
         <div
           className="[letter-spacing:-1.74px] text-center w-[636px] top-0 left-[50%] opacity-[0.6] absolute text-[#1E1E1E] font-['Inter_Tight',system-ui,sans-serif] font-bold text-[40px]/[40px]"
           style={{ translate: '-50%' }}
@@ -197,7 +215,7 @@ export default function Section2() {
 
       {/* Two cards: Operations handled / Self learning workflow */}
       <div
-        className="flex left-[50%] top-[3828px] items-start gap-[66px] absolute"
+        className="flex left-[50%] top-[4728px] items-start gap-[66px] absolute"
         style={{ translate: '-50%' }}
       >
         {[
@@ -268,7 +286,7 @@ export default function Section2() {
       />
 
       {/* Black "future state" panel — full bleed */}
-      <div className="absolute top-[4260px] left-0 w-full h-[1000px] bg-[#080808]">
+      <div className="absolute top-[5160px] left-0 w-full h-[1000px] bg-[#080808]">
         <div className="absolute top-[56px] left-0 w-full text-center tracking-[0.16em] uppercase text-[#FFFFFF33] font-['Inter_Tight',system-ui,sans-serif] font-semibold text-[11px]/[14px]">
           The future state
         </div>
@@ -340,7 +358,7 @@ export default function Section2() {
 
       {/* See how we are on it CTA */}
       <div
-        className="items-center flex justify-center rounded-2xl py-3 px-16 top-[5364px] h-[64px] left-[50%] absolute bg-[#0E172A] border border-solid border-[#FFFFFF33] [outline:1px_solid_#202B42] cursor-pointer z-10"
+        className="items-center flex justify-center rounded-2xl py-3 px-16 top-[6264px] h-[64px] left-[50%] absolute bg-[#0E172A] border border-solid border-[#FFFFFF33] [outline:1px_solid_#202B42] cursor-pointer z-10"
         style={{ translate: '-50% -50%' }}
       >
         <div className="flex [letter-spacing:-0.2px] text-[#F0F0F0] font-['Inter_Tight',system-ui,sans-serif] font-bold text-base/[25.6px]">
@@ -361,6 +379,6 @@ export default function Section2() {
         <path d="M1150.8 31.297C1143.94 34.834 1135.71 36.602 1126.11 36.602C1116.51 36.602 1108.1 34.834 1100.9 31.297C1094.04 27.584 1090.61 23.252 1090.61 18.301C1090.61 13.35 1094.04 9.106 1100.9 5.57C1107.76 1.857 1116.16 0 1126.11 0C1136.05 0 1144.45 1.857 1151.31 5.57C1158.17 9.106 1161.6 13.35 1161.6 18.301C1161.6 23.252 1158 27.584 1150.8 31.297ZM1098.33 189.111V56.495H1153.89V189.111H1098.33Z" fill="#FFFFFF" />
         <path d="M1361.91 84.079H1298.13V147.735C1298.13 153.216 1300.53 157.195 1305.33 159.67C1310.13 161.969 1317.16 163.295 1326.42 163.649C1336.02 163.826 1347.85 163.737 1361.91 163.384V189.111C1319.39 191.764 1288.87 189.907 1270.35 183.541C1251.83 176.999 1242.57 165.064 1242.57 147.735V84.079H1298.13V27.849L1361.91 84.079Z" fill="#FFFFFF" />
       </svg>
-    </div>
+    </section>
   );
 }
