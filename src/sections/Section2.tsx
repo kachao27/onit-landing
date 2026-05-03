@@ -74,11 +74,17 @@ function ScreenshotCard({ src, height = 552 }: { src: string; height?: number })
   );
 }
 
-const platforms = ['Shopify', 'Zepto', 'Blinkit', 'Amazon', 'Flipkart'];
+const platforms: { name: string; slug: string }[] = [
+  { name: 'Shopify', slug: 'shopify' },
+  { name: 'Zepto', slug: 'zepto' },
+  { name: 'Blinkit', slug: 'blinkit' },
+  { name: 'Amazon', slug: 'amazon' },
+  { name: 'Flipkart', slug: 'flipkart' },
+];
 
 export default function Section2() {
   return (
-    <div className="[font-synthesis:none] w-[1440px] h-[6200px] overflow-clip relative antialiased text-xs/4 bg-[#F0F0F0]">
+    <section className="[font-synthesis:none] w-full h-[6200px] overflow-hidden relative antialiased text-xs/4 bg-[#F0F0F0]">
       {/* THE QUESTION header */}
       <div
         className="text-center tracking-[-0.01em] mix-blend-multiply top-[40px] left-[50%] absolute text-[#19191966] font-['Inter_Tight',system-ui,sans-serif] font-semibold text-2xl/[30px]"
@@ -249,7 +255,7 @@ export default function Section2() {
         ))}
       </div>
 
-      {/* Footer dithering wave */}
+      {/* Footer dithering wave — full bleed */}
       <Dithering
         speed={1.05}
         shape="wave"
@@ -258,11 +264,11 @@ export default function Section2() {
         scale={1.17}
         colorBack="#00000000"
         colorFront="#02B3FF"
-        className="w-[1440px] h-[732px] absolute left-0 bottom-0"
+        className="w-full h-[732px] absolute left-0 bottom-0"
       />
 
-      {/* Black "future state" panel */}
-      <div className="absolute top-[4260px] left-[50%] w-[1440px] h-[1000px] bg-[#080808]" style={{ translate: '-50%' }}>
+      {/* Black "future state" panel — full bleed */}
+      <div className="absolute top-[4260px] left-0 w-full h-[1000px] bg-[#080808]">
         <div className="absolute top-[56px] left-0 w-full text-center tracking-[0.16em] uppercase text-[#FFFFFF33] font-['Inter_Tight',system-ui,sans-serif] font-semibold text-[11px]/[14px]">
           The future state
         </div>
@@ -311,9 +317,21 @@ export default function Section2() {
             SUPPORTING Platforms
           </div>
           {platforms.map((p) => (
-            <div key={p} className="rounded-[20px] py-1 px-3.5 border border-solid border-[#FFFFFF1F]">
+            <div
+              key={p.slug}
+              className="rounded-[20px] py-1 px-3.5 border border-solid border-[#FFFFFF1F] flex items-center gap-1.5"
+            >
+              <img
+                src={`https://cdn.simpleicons.org/${p.slug}/FFFFFF99`}
+                alt=""
+                width={12}
+                height={12}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
               <div className="text-[#FFFFFF66] font-['Inter_Tight',system-ui,sans-serif] font-medium text-xs/4">
-                {p}
+                {p.name}
               </div>
             </div>
           ))}
@@ -336,7 +354,7 @@ export default function Section2() {
         height="193"
         viewBox="0 0 1362 193"
         fill="none"
-        style={{ width: '1440px', height: 'auto', position: 'absolute', left: 0, bottom: -1, mixBlendMode: 'soft-light' }}
+        style={{ width: '1440px', maxWidth: '100%', height: 'auto', position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: -1, mixBlendMode: 'soft-light' }}
       >
         <path d="M643.9 192.559C606.177 192.559 574.112 185.84 547.705 172.402C521.299 158.963 508.096 142.43 508.096 122.803C508.096 103.176 521.299 86.643 547.705 73.204C574.112 59.766 606.177 53.047 643.9 53.047C681.966 53.047 714.031 59.766 740.095 73.204C766.501 86.643 779.704 103.176 779.704 122.803C779.704 142.43 766.501 158.963 740.095 172.402C714.031 185.84 681.966 192.559 643.9 192.559ZM586.8 152.774C602.233 160.731 621.266 164.71 643.9 164.71C666.534 164.71 685.567 160.731 700.999 152.774C716.432 144.817 724.148 134.827 724.148 122.803C724.148 110.779 716.432 100.789 700.999 92.832C685.567 84.875 666.534 80.896 643.9 80.896C621.266 80.896 602.233 84.875 586.8 92.832C571.368 100.789 563.652 110.779 563.652 122.803C563.652 134.827 571.368 144.817 586.8 152.774Z" fill="#FFFFFF" />
         <path d="M946.114 53.047C975.607 53.047 999.441 57.909 1017.62 67.635C1035.79 77.36 1044.88 90.71 1044.88 107.685V189.111H989.325V110.602C989.325 100.7 984.18 93.097 973.892 87.792C963.604 82.488 949.544 79.835 931.711 79.835C912.163 79.835 896.388 83.018 884.385 89.384C872.382 95.572 866.381 105.121 866.381 118.029V189.111H810.824V56.495H866.381V73.47C883.185 59.854 909.762 53.047 946.114 53.047Z" fill="#FFFFFF" />
