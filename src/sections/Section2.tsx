@@ -58,16 +58,15 @@ function ScreenshotCard({ src, height = 552 }: { src: string; height?: number })
         scale={1.61}
         colorBack="#00000000"
         colorFront="#F8F8F8"
-        className="w-[976px] h-[732px] absolute left-[50%] top-[50%]"
+        className="w-[976px] h-[732px] absolute left-[50%] top-[50%] pointer-events-none"
         style={{ translate: '-50% -50%' }}
       />
       <div
-        className="rounded-xl absolute left-[50%] top-[50%] bg-cover bg-center [box-shadow:#0000000D_8px_-8px_0px]"
+        className="rounded-xl relative bg-no-repeat bg-top bg-contain [box-shadow:#0000000D_8px_-8px_0px] z-10"
         style={{
           backgroundImage: `url(${src})`,
-          width: 852,
-          height: height - 100,
-          translate: '-50% -50%',
+          width: 896,
+          height: 778,
         }}
       />
     </div>
