@@ -83,7 +83,7 @@ const platforms: { name: string; slug: string }[] = [
 
 export default function Section2() {
   return (
-    <section className="[font-synthesis:none] w-full h-[7100px] overflow-hidden relative antialiased text-xs/4 bg-[#F0F0F0]">
+    <section className="[font-synthesis:none] w-full h-[7600px] overflow-hidden relative antialiased text-xs/4 bg-[#F0F0F0]">
       {/* THE QUESTION header */}
       <div
         className="text-center tracking-[-0.01em] mix-blend-multiply top-[40px] left-[50%] absolute text-[#19191966] font-['Inter_Tight',system-ui,sans-serif] font-semibold text-2xl/[30px]"
@@ -203,7 +203,7 @@ export default function Section2() {
       </div>
 
       {/* "Work picked up from anywhere..." headline */}
-      <div className="left-[50%] top-[4544px] w-[689px] absolute" style={{ translate: '-50%' }}>
+      <div className="left-[50%] top-[5044px] w-[689px] absolute" style={{ translate: '-50%' }}>
         <div
           className="[letter-spacing:-1.74px] text-center w-[636px] top-0 left-[50%] opacity-[0.6] absolute text-[#1E1E1E] font-['Inter_Tight',system-ui,sans-serif] font-bold text-[40px]/[40px]"
           style={{ translate: '-50%' }}
@@ -214,7 +214,7 @@ export default function Section2() {
 
       {/* Two cards: Operations handled / Self learning workflow */}
       <div
-        className="flex left-[50%] top-[4728px] items-start gap-[66px] absolute"
+        className="flex left-[50%] top-[5228px] items-start gap-[66px] absolute"
         style={{ translate: '-50%' }}
       >
         {[
@@ -285,7 +285,7 @@ export default function Section2() {
       />
 
       {/* Black "future state" panel — full bleed */}
-      <div className="absolute top-[5160px] left-0 w-full h-[1000px] bg-[#080808]">
+      <div className="absolute top-[5660px] left-0 w-full h-[1000px] bg-[#080808]">
         <div className="absolute top-[56px] left-0 w-full text-center tracking-[0.16em] uppercase text-[#FFFFFF33] font-['Inter_Tight',system-ui,sans-serif] font-semibold text-[11px]/[14px]">
           The future state
         </div>
@@ -357,7 +357,7 @@ export default function Section2() {
 
       {/* See how we are on it CTA */}
       <div
-        className="items-center flex justify-center rounded-2xl py-3 px-16 top-[6264px] h-[64px] left-[50%] absolute bg-[#0E172A] border border-solid border-[#FFFFFF33] [outline:1px_solid_#202B42] cursor-pointer z-10"
+        className="items-center flex justify-center rounded-2xl py-3 px-16 top-[6764px] h-[64px] left-[50%] absolute bg-[#0E172A] border border-solid border-[#FFFFFF33] [outline:1px_solid_#202B42] cursor-pointer z-10"
         style={{ translate: '-50% -50%' }}
       >
         <div className="flex [letter-spacing:-0.2px] text-[#F0F0F0] font-['Inter_Tight',system-ui,sans-serif] font-bold text-base/[25.6px]">
